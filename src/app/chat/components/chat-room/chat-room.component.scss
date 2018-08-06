@@ -1,0 +1,59 @@
+.profile-photo-chat {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.chat-room {
+  height: calc(100% - 70px);
+  padding-bottom: 20px !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chat-form {
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+}
+
+.chat_attachment {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.c-gray {
+  color: #ccc;
+}
+
+.message-sender-info {
+  padding-left: 10px;
+  width: calc(100% - 50px);
+  display: inline-block;
+}
+
+.avatar {
+  float: left;
+  margin-top: 6px;
+}
+
+.message-text {
+  margin-left: 50px;
+  width: calc(100% - 50px);
+  word-wrap: break-word;
+}
+
+.msgs:not(:first-child) {
+  border-top: 1px solid #ccc;
+}
+
+.edited {
+  color: #b3b3b3;
+}
+
+.edit-icon {
+  cursor: pointer;
+}

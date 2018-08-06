@@ -1,0 +1,7 @@
+<div *ngIf="userPhoto || (!userPhoto && !user.photo)" class="d-flex w-100">
+  <img src="{{userPhoto}}" class="img-rounded profile-photo d-inline-block" alt="Profile Picture">
+  <h5 class="m-0 ml-2 d-inline-block">
+    {{user.username}}
+    <small class="w-100 ml-2 d-inline-block">{{user.name}} {{user.surname}}</small>
+  </h5>
+</div>

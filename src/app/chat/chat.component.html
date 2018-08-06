@@ -1,0 +1,38 @@
+<div class="container-fluid m-0 p-0 fix-height" [appDndUploader]="{type: 'multiple'}" (draggedOver)="dragOver($event)"
+     (filesChangeEmiter)="onFilesChange($event)">
+  <div class=" justify-content-center align-items-center" [ngClass]="{'dnd-bg d-flex': dgOver, 'd-none': !dgOver}"><p
+    class="text-center">Drop your file to upload</p></div>
+  <div class="row full-height m-0">
+    <div class="col-md-3 users-list p-0 m-0">
+      <div class="user-personal-section" *ngIf="userDetails">
+        <div>
+          <h5 class="m-0 user-info ">
+            {{userDetails.username}}
+            <i class="fa fa-sign-out fa-2x signout" (click)="signOut()"></i>
+          </h5>
+          <span class="user-info-name">{{userDetails.name}} {{userDetails.surname}}</span>
+        </div>
+        <div class="status-section row m-0">
+          <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+            <label class="btn btn-success w-33" *ngFor="let status of userStatuses;" [ngClass]="{active: status == userCurrentStatus}">
+              <input type="radio" name="options" autocomplete="off" checked (click)="setStatus(status)">
+              {{ status | uppercase }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="redirect-buttons-section">
+        <button class="btn btn-light">
+          <a routerLink="/chat/profile">Profile</a>
+        </button>
+        <button class="btn btn-light">
+          <a routerLink="/chat">Groups</a>
+        </button>
+      </div>
+      <app-user-list></app-user-list>
+    </div>
+    <div class="col-md-9 ov-y-scroll">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

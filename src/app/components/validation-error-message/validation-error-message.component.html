@@ -1,0 +1,3 @@
+<div class="alert alert-danger" *ngIf="field.errors && (field.dirty || field.touched)">
+  {{ (field.errors | objectFirstKey).message}}
+</div>

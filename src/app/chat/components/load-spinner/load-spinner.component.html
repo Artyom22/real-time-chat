@@ -1,0 +1,15 @@
+<div *ngIf="styleType==='loading-dots'  && overlay===false ">
+  <div class="loading-dots--dot"></div>
+  <div class="loading-dots--dot"></div>
+  <div class="loading-dots--dot"></div>
+</div>
+<div></div>
+<div>
+  <div *ngIf="styleType==='spinner-small' && overlay===true" class="spinner-small-overlay overlay-content"></div>
+  <div *ngIf="styleType==='spinner-large' && overlay===true" class="spinner-large-overlay overlay-content"></div>
+  <div *ngIf="styleType==='loading-dots' && overlay===true" class="overlay-content">
+    <div class="loading-dots--dot"></div>
+    <div class="loading-dots--dot"></div>
+    <div class="loading-dots--dot"></div>
+  </div>
+</div>

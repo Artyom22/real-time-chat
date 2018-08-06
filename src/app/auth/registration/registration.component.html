@@ -1,0 +1,47 @@
+<form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name">
+    <app-validation-error-message [field]="name"></app-validation-error-message>
+  </div>
+
+  <div class="form-group">
+    <label>Surname</label>
+    <input type="text" class="form-control" formControlName="surname">
+    <app-validation-error-message [field]="surname"></app-validation-error-message>
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" formControlName="username">
+    <app-validation-error-message [field]="username"></app-validation-error-message>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" formControlName="email">
+    <app-validation-error-message [field]="email"></app-validation-error-message>
+  </div>
+  <div [formGroup]="passwordGroup">
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password">
+      <app-validation-error-message [field]="password"></app-validation-error-message>
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" class="form-control" formControlName="passwordCf">
+      <app-validation-error-message [field]="passwordCf" ></app-validation-error-message>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="custom-file">
+      <input type="file" class="custom-file-input form-control" id="customFile" formControlName="photo"
+             (change)="onFileChange($event)">
+      <label class="custom-file-label" for="customFile">Choose file</label>
+    </div>
+  </div>
+  <input type="submit" class="btn btn-success">
+</form>
+

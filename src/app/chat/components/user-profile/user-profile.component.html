@@ -1,0 +1,38 @@
+<tabset [justified]="true">
+  <tab heading="Profile Details">
+    <div class="card" style="width: 18rem;" *ngIf="user && userPhoto">
+      <img class="card-img-top" [src]="userPhoto" alt="profile image">
+      <div class="card-body">
+        <button class="btn btn-light" *ngIf="!photoEdit" (click)="switchPhotoEdit()">Change Photo</button>
+        <div *ngIf="photoEdit">
+          <div class="form-group">
+            <label for="noPhoto" class="labe">No Photo
+            <input type="checkbox" [(ngModel)]="withoutPhoto" id="noPhoto" value="withoutPhoto">
+            </label>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input form-control" id="customFile"
+                   (change)="onFileChange($event)">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+          <button class="btn btn-light" (click)="savePhoto()">Save</button>
+          <button class="btn btn-light" (click)="switchPhotoEdit()">Cancel</button>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a>Name</a>-{{ user.name }}</li>
+        <li class="list-group-item"><a>Surname</a>--{{ user.surname }}</li>
+        <li class="list-group-item"><a>Username</a>--{{ user.username }}</li>
+        <li class="list-group-item"><a>Email</a>--{{ user.email }}</li>
+      </ul>
+      <div class="card-body">
+        <button type="button" class="btn btn-primary" (click)="openProfileEditModal()">Edit Profile</button>
+        <button type="button" class="btn btn-primary" (click)="openPasswordEditModal()">Edit Password</button>
+      </div>
+    </div>
+
+  </tab>
+  <tab heading="Group Details">
+    <app-user-groups></app-user-groups>
+  </tab>
+</tabset>

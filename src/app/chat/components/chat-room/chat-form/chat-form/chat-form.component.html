@@ -1,0 +1,10 @@
+<form novalidate [formGroup]="msgForm" (ngSubmit)="onSubmit(); form.reset()" #form='ngForm' class="form-inline">
+  <div class="input-group mb-3 w-100">
+    <div class="input-group-prepend">
+      <span class="input-group-text add-files" (click)="uploader.click()">+</span>
+      <input type="file" (change)="onFileChange($event)" #uploader class="d-none" multiple>
+    </div>
+    <input type="text" class="form-control text-area" formControlName="msg" id="msg">
+  </div>
+</form>
+

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-6">
+    <form [formGroup]="editForm">
+      <div class="form-group">
+        <input id="text" type="text" class="form-control" formControlName="text" [value]="msg.msg.text" minlength="3" required>
+        <div *ngIf="editForm.controls.text.invalid && (editForm.controls.text.dirty || editForm.controls.text.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="editForm.controls.text.errors.required">
+            Text is required.
+          </div>
+          <div *ngIf="editForm.controls.text.errors.minlength">
+            Min Length of text is 1 symbols.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <div class="">
+      <button *ngIf="editForm.status==='VALID'" class="btn btn-primary" type="submit" (click)="editTodoItem()">Save</button>
+      <button *ngIf="editForm.status!=='VALID'" class="btn btn-default" disabled>Save</button>
+      <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="users">
+  <ul class="list-group">
+    <li class="list-group-item online-user p-2" [ngClass]="{'busy-bg': users[u].status === 'busy'}"
+        *ngFor="let u of users | objectKeys">
+      <app-user-list-item [user]="users[u]"></app-user-list-item>
+    </li>
+  </ul>
+</div>
+

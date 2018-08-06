@@ -1,0 +1,26 @@
+<div class="container py-5 auth-scroll">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card rounded-0">
+            <div class="card-header col-12 row m-0 p-0">
+              <ul class="nav col-12 p-0">
+                <li class="nav-item col-6 text-center p-0">
+                  <a class="nav-link text-dark font-weight-bold" routerLink="login" routerLinkActive="active"
+                     [routerLinkActiveOptions]="{exact:true}">Login</a>
+                </li>
+                <li class="nav-item col-6 text-center p-0">
+                  <a class="nav-link text-dark font-weight-bold" routerLink="register" routerLinkActive="active">Registration</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

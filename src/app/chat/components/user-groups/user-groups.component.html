@@ -1,0 +1,21 @@
+<div *ngIf="groups">
+  <ul class="list-group" *ngFor="let g of groups">
+    <li class="list-group-item" *ngIf="!groupEditing">
+      <i>{{ g.name }}</i>
+      <span class="float-right">
+       <button>
+         <i class="fa fa-trash" (click)="deleteGroup(g.id)"></i>
+       </button>
+        <button>
+          <i class="fa fa-edit" (click)="switchMode(g.id)"></i>
+        </button>
+      </span>
+    </li>
+    <li class="list-group-item" *ngIf="groupEditing && editId===g.id">
+      <app-group-edit-form [groupDetails]="g"
+                           (switchMode)="cancel($event)"
+                           (editGroup)="edit($event)"></app-group-edit-form>
+    </li>
+  </ul>
+</div>
+
